@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+    <meta name="description" content="Ze Meridien Green Start are a leading provider of green and solar products to businesses and individuals"/>
+    <meta name="keywords" content="meridien, green start, green products, organic products, solar products, green events, green travel"/>
+    <meta name="author" content="TELL Communications Limited"/>
+	<title> Ze Meridien Green Start</title>
+    <link rel="stylesheet" href="css/mainStyles.css"/>
+    <link rel="stylesheet" href="css/mobileStylesheet.css" media="screen and (max-width:767px)"/>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600,300' rel='stylesheet' type='text/css'>
+    <!--[if lt IE9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"</script><![endif] -->
+</head>
+<body onLoad="MM_preloadImages('images/butterfly_inverted.gif')">
+	<div class="container">
+    <header> <img src="images/banner.jpg" width="950" height="130" alt="greenstart logo"/> </header>
+    <nav><a href="index.html">Home</a> &nbsp; | &nbsp; <a href="products.html">Products</a></nav>
+    <aside>
+	<ul>
+    	<li>  <a href="tips.html">Tips</a>	</li>
+    	<li>  <a href="news.html">News</a>	</li>
+        <li>  <a href="events.html">Events</a> </li>
+        <li>  <a href="travel.html">Travel</a> </li>
+		<li>  <a href="products.html">Products</a></li>
+		<li>  <a href="club.html">Club</a> </li>
+    </ul>
+    <figure>
+   		<img src="images/bike.jpg" width="180" height="167" alt="Biking to work"/>
+		<figcaption>Biking to work</figcaption>
+    </figure>
+    </aside>
+    <article>
+		<h1> Geo-Location</h1>
+        <p> Click to get your GPS coordinates</p>
+		<button onClick="getLocation()"> GPS coordinates</button>
+        <div id="gpscoordinatesmap"></div>
+        <p id="gpscoordinatesdemo"> </p>
+        <script>
+			var x = document.getElementById("gpscoordinatesdemo");
+			function getLocation() {
+					if(navigator.geolocation) {
+						navigator.geolocation.getCurrentPosition(showPosition);
+					}
+					else {
+						x.innerHTML = "Geolocation is not support by your Browser.";
+					}
+			}
+			function showPosition(position) {
+				var latlon = position.coords.latitude + "," + position.coords.longitude;
+				var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=600x400&sensor=false";
+				document.getElementById("gpscoordinatesmap").innerHTML = "<img src = '"+img_url+"'>";
+<!--			x.innerHTML = "Lattitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;-->
+			}
+		</script>
+    </article>
+    <footer> <small><span class="footerTextSpacing">&copy;1999-2015</span><span class="footerTextSpacing">TELL</span> | <span class="footerTextSpacing"><a href="aboutus.html">About Us</a> </span> | <span class="footerTextSpacing"><a href="contactus.html">Contact Us</a></span></small></footer>
+    </div>
+</body>
+</html>
